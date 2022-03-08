@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>BMI calculator</title>
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+        .btn {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            text-align: center;
+            font-size: 15px; 
+         }
+         .btn:hover {
+            background-color: rgb(190, 196, 192);
+            color: black;
+           
+         }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="display-4 text-center mb-3">BMI
+
+            </h1>
+    <div>
+
+
+      
+        <h2>BMI Calculator</h2>
+    <br>
+        <h4 class="text">Height(cm)</h4>
+        <input type="text" id="h" class="form-control form-control-lg" placeholder="Enter Height..">
+        
+        <br>
+        <h4 class="text">Weight(KGs)</h4>
+        <input type="text" id="w" class="form-control form-control-lg" placeholder="Enter Weight...">
+        <br>
+        <h5 id="result"></h5>
+        <br>
+        <button id="btn" class="btn btn-secondry" onClick= "BMI()">Calculate</button>
+        <p id="info">*please Enter height [cm] and weight [kg]</p>
+       
+  
+    </div>
+</div>
+</div>
+</div>
+
+    
+    <script type="text/javascript">
+		function BMI() {
+			let h=document.getElementById('h').value;
+			let w=document.getElementById('w').value;
+			let bmi=w/(h/100*h/100);
+			let bmio=(bmi.toFixed(2))
+			
+
+			// document.getElementById("result").innerHTML="Your BMI is " + bmio;
+
+            if(bmio <=18.5 ){
+                document.getElementById('result').innerHTML='your in Underweight your BMI is ' + bmio
+            }else if(bmio >=18.5&& bmio <=25){
+                document.getElementById('result').innerHTML='your in Healthy weight your BMI is ' +bmio
+            } else if(bmio >=25 && bmio<=1000){
+                document.getElementById('result').innerHTML='your in Overweight your BMI is ' +bmio
+            }else{
+                document.getElementById('result').innerHTML='Please Enter valid details ' 
+            }
+		}
+	</script>
+        
+    </body>
+</html>
